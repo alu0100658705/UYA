@@ -5,7 +5,8 @@
 - Víctor Dávila Palenzuela
 - Pablo Bethencourt Díaz
 
-##Practica 1: Introducción al protocolo HTTP
+**Practica 1: Introducción al protocolo HTTP**
+---
 
 
 
