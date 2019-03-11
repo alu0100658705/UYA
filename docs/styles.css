@@ -83,3 +83,7 @@ font-family: Verdana, sans-serif;
 table a:link{	
 	color: green;
 }
+
+table a:hover{	
+	color: red;
+}
