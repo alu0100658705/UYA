@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="jquery-3.3.1.min.js"></script>
+    <title>Formulario con Ajax y Jquery</title>
+</head>
+<body>
+
+<form id="formulario">
+    <div>
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre: " />
+    </div>
+    <div>
+        <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos: " />
+    </div>
+    <div>
+        <input type="text" id="direccion" name="direccion" placeholder="Dirección: ">
+    </div>
+    <div>
+        <input type="number" id="edad "name="edad" min="1" max="99" placeholder="Edad: ">
+    </div>
+    <div>
+        <input type="email" id="correo" name="correo" placeholder="Correo: ">
+    </div>
+    
+    <button type="submit">Enviar</button>
+</form>
+
+<p></p>
+
+
+<script>
+    (function($){
+        function fun_ajax(evento){
+            $.ajax({
+                url: 'https://jsonplaceholder.typicode.com/comments?postId=1',
+                dataType: 'text',
+                type: 'post',
+                async: true,
+                data: $(this).serialize(),
+                success: function( data, textStatus, jQxhr ){
+                    $('p').html( data );
+                },
+            });
+
+            evento.preventDefault();
+        }
+
+        $('#formulario').submit( fun_ajax );
+    })(jQuery);
+</script>
+</body>
+</html>
