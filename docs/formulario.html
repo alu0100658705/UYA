@@ -7,48 +7,39 @@
 </head>
 <body>
 
-<form id="formulario">
-    <div>
-        <input type="text" id="nombre" name="nombre" placeholder="Nombre: " />
-    </div>
-    <div>
-        <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos: " />
-    </div>
-    <div>
-        <input type="text" id="direccion" name="direccion" placeholder="Dirección: ">
-    </div>
-    <div>
-        <input type="number" id="edad "name="edad" min="1" max="99" placeholder="Edad: ">
-    </div>
-    <div>
-        <input type="email" id="correo" name="correo" placeholder="Correo: ">
-    </div>
-    
-    <button type="submit">Enviar</button>
-</form>
+	<h1>Petición AJAX con jQuery</h1>
+<div id="mensaje"></div>
+ 
+<button id="cargar">Cargar</button>
 
-<p></p>
+<script type="text/javascript">
+$(document).ready(function(){
+ $("#cargar").click(function(){
+    $.get('https://jsonplaceholder.typicode.com/comments?postId=1', function(data){
+  $("#mensaje").html(data);
+});
+ });
+ 
+});
+</script>
 
+
+ <!--  
+    <button id="enviar">Enviar</button>
+
+<div id="div1"></div>
 
 <script>
-    (function($){
-        function fun_ajax(evento){
-            $.ajax({
-                url: 'https://jsonplaceholder.typicode.com/comments?postId=1',
-                dataType: 'text',
-                type: 'post',
-                async: true,
-                data: $(this).serialize(),
-                success: function( data, textStatus, jQxhr ){
-                    $('p').html( data );
-                },
-            });
-
-            evento.preventDefault();
-        }
-
-        $('#formulario').submit( fun_ajax );
-    })(jQuery);
+	$(document).ready(function(){
+ 		$("#enviar").click(function(){
+    		$.get("https://jsonplaceholder.typicode.com/comments?postId=1", function(data){
+  				$("#div1").html(data);
+			});
+ 		});
+	});
 </script>
+-->
+
+
 </body>
 </html>
