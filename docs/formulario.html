@@ -10,14 +10,15 @@
 	<h1>Petición AJAX con jQuery</h1>
 <div id="mensaje"></div>
  
-<button id="cargar">Cargar</button>
+<button id="aceptar">Aceptar</button>
 
 <script type="text/javascript">
-$(document).ready(function(){
+$(document).ready(function(evento){
  $("#cargar").click(function(){
-    $.get("http://lineadecodigo.com/samples/datos.php", function(data){
-  $("#mensaje").html(data);
+    $.get("https://jsonplaceholder.typicode.com/comments?postId=1", function(data){
+  $("#aceptar").html(data);
 });
+	evento.preventDefault();
  });
  
 });
