@@ -7,40 +7,38 @@
 </head>
 <body>
 
-	<h1>Petición AJAX con jQuery</h1>
-<div id="mensaje"></div>
- 
-<button id="aceptar">Aceptar</button>
+<form id="formulario">
+    <div>
+        Introduzca el valor del Index: 
+        <input type="number" id="indice" name="indice" placeholder="Index: ">
+    </div>
+    
+    <button>Enviar</button>
+</form>
 
-<script type="text/javascript">
-$(document).ready(function(evento){
- $("#cargar").click(function(){
-    $.get("https://jsonplaceholder.typicode.com/comments?postId=1", function(data){
-  $("#aceptar").html(data);
-});
-	evento.preventDefault();
- });
- 
-});
-</script>
-
-
- <!--  
-    <button id="enviar">Enviar</button>
-
-<div id="div1"></div>
+<div id="respuesta"></div>
 
 <script>
-	$(document).ready(function(){
- 		$("#enviar").click(function(){
-    		$.get("https://jsonplaceholder.typicode.com/comments?postId=1", function(data){
-  				$("#div1").html(data);
-			});
- 		});
-	});
-</script>
--->
 
+    var root = 'https://jsonplaceholder.typicode.com/comments?postId=';
+    var resultado = '';
+    
+  
+  $("button").click(function(e){
+    e.preventDefault();
+    var iden = document.getElementById("indice").value;
+
+    $.ajax({
+        url: root + iden,
+        type: 'GET',
+        }).then(function(data) {
+            $.each(data, function(index, element) {
+            resultado +=  'postId = '  + element.postId + '<br/>' + 'id = ' + element.id +  '<br/>' + 'name = ' + element.name + '<br/>' + 'email = ' + element.email + '<br/>' + 'body = ' + element.body + '</br>' + '<br/>';
+            $("#respuesta").html(resultado); 
+            });
+        });
+    });
+</script>
 
 </body>
 </html>
