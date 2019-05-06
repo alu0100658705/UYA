@@ -12,6 +12,16 @@ input[type=text], select {
     font-size: 120%
 }  
 
+input {
+  width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
 p {
     font-family: "Times New Roman", Times, serif;
     font-size: 20px;
@@ -22,6 +32,7 @@ p {
 .form label {
     float: left;
     margin-right: 0.5em;
+    font-size: 20px;
 } 
   
   input[type=number], select {
@@ -47,4 +58,23 @@ p {
   
   input[type=submit]:hover {
     background-color: #45a049;
+  }
+
+  .button {
+    color: #fff;
+    background-color: #5D1972;
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    border-width: 2px;
+    padding: 20px;
+    font-size: 20px;
+    line-height: 0.5px;
+    border-radius: 0.25rem;
+    border-color: #5D1972;
+  }
+
+  .button:hover {
+    background-color: #4CAF50;
+    color: white;
   }
