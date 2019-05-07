@@ -77,7 +77,8 @@
                 const auth = firebase.auth(); 
 
                 const promise = auth.createUserWithEmailAndPassword(email,password)
-                .then(user => {  
+                .then(user => {
+                    location = "Registro.html";  
                     document.getElementById('mensaje').innerHTML = "Usuario creado con éxito";
                 }).catch(error => {
                     console.error(error);
