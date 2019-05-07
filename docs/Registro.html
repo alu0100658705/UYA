@@ -78,10 +78,9 @@
 
                 const promise = auth.createUserWithEmailAndPassword(email,password)
                 .then(user => {
-                    location = "Registro.html";  
-                    document.getElementById('mensaje').innerHTML = "Usuario creado con éxito";
+                    document.getElementById('mensaje').innerHTML = "Usuario creado con éxito";  
                 }).catch(error => {
-                    console.error(error);
+                    document.getElementById('mensaje').innerHTML = error;
                 })
                 promise.catch(e => console.log(e.message));
             });
