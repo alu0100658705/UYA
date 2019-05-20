@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+
+	<head>
+      <meta charset="UTF-8">
+		<link rel="stylesheet" href="css/estilos.css">
+        <title> Registro </title>
+        <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>        
+    </head>
+    
+    <body class="indigo lighten-5">
+        <nav class="nav-extended purple darken-3">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="index.html" class="brand-logo"><h4>Club De Lectura ULL</h4></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="Registro.html">Registro</a></li>
+                        <li><a href="">Iniciar Sesión</a></li>
+                    </ul>
+                </div>
+                <div role ="barra menú" aria-label ="menú principal" class="nav-content">
+                <div class="tabs tabs-transparent">
+                    <ul>
+                        <li><a href="index.html"><h5>Portada</h5></a></li>
+                        <li><a href="Formulario.html"><h5>Formulario</h5></a></li>
+                        <li><a href="catalogo.html"><h5>Catálogo</h5></a></li>
+                        <li><a href="biblioteca.html"><h5>Biblioteca</h5></a></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </nav>
+        
+
+
+
+        <div class=container>
+        <form id="formulario" class="formulario">
+            <label for="correo"> Correo Electrónico: <abbr class="req" title="required">*</abbr> </label>
+            <input id="correo" type="email" placeholder="Email" >
+            <label for="pass"> Contraseña: <abbr class="req" title="required">*</abbr></label>
+            <input id="txtpass" type="password" placeholder="Password" >
+        </form>
+
+            <button id="btnRegistro" class="button">
+                Registro
+            </button>
+
+            <button id="btnAcceso" class="button">
+                Iniciar Sesión
+            </button>
+
+            <button id="btnSalir" class="button">
+                Salir
+            </button>
+
+            <p> <div id="mensaje"></div>  </p>
+            
+
+        </div>
+
+    </body>
+        <script>
+
+            // Initialize Firebase
+            var config = {
+              apiKey: "AIzaSyBRwkE7Lj0K_nU11r2wfa9Hy3jfikBUnxQ",
+              authDomain: "uya-g2.firebaseapp.com",
+              databaseURL: "https://uya-g2.firebaseio.com",
+              projectId: "uya-g2",
+              storageBucket: "uya-g2.appspot.com",
+              messagingSenderId: "98345995388"
+            };
+            firebase.initializeApp(config);
+
+            const Correo = document.getElementById('correo');
+            const txtpass = document.getElementById('txtpass');
+            const btnRegistro = document.getElementById('btnRegistro');
+            const btnAcceso = document.getElementById('btnAcceso');
+            const btnSalir = document.getElementById('btnSalir');
+
+            const auth = firebase.auth();
+            
+            btnAcceso.addEventListener('click', e => {
+                const email = Correo.value;
+                const password = txtpass.value;
+                const auth = firebase.auth(); 
+
+                const promise = auth.signInWithEmailAndPassword(email, password)
+                .then(user => {
+                    location = 'index.html'
+                }).catch(error => {
+                    document.getElementById('mensaje').innerHTML = error;
+                })
+                promise.catch(e => console.log(e.message));
+            });
+
+            btnRegistro.addEventListener('click', e => {
+                const email = Correo.value;
+                const password = txtpass.value;
+                const auth = firebase.auth(); 
+
+                const promise = auth.createUserWithEmailAndPassword(email,password)
+                .then(user => {
+                    document.getElementById('mensaje').innerHTML = "Usuario creado con éxito";  
+                }).catch(error => {
+                    document.getElementById('mensaje').innerHTML = error;
+                })
+                promise.catch(e => console.log(e.message));
+            });
+
+
+
+        </script>
+
+</html>

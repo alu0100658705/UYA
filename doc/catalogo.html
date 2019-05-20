@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="UTF-8">
+      <title>Club de Lectura</title>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+      <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    </head>
+
+    <body class="indigo lighten-5">
+      <nav class="nav-extended purple darken-3">
+        <div class="container">
+          <div class="nav-wrapper">
+            <a href="index.html" class="brand-logo"><h4>Club De Lectura ULL</h4></a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="Registro.html">Registro</a></li>
+                <li><a href="">Iniciar Sesión</a></li>
+              </ul>
+          </div>
+          <div role ="barra menú" aria-label ="menú principal" class="nav-content">
+          <div class="tabs tabs-transparent">
+          <ul>
+            <li><a href="index.html"><h5>Portada</h5></a></li>
+            <li><a href="Formulario.html"><h5>Formulario</h5></a></li>
+            <li><a href="catalogo.html"><h5>Catálogo</h5></a></li>
+            <li><a href="biblioteca.html"><h5>Biblioteca</h5></a></li>
+          </ul>
+          </div>
+          </div>
+        </div>
+      </nav>
+
+        <table id="tabla_libros" class="table">
+					<thead>
+							<tr>
+								<th scope="col">Autor</th>
+								<th scope="col">Fecha</th>
+								<th scope="col">Género</th>
+								<th scope="col">Título</th>
+
+							</tr>
+					</thead>
+			</section>
+
+<tbody id="etiqueta">
+</tr>
+</tbody>
+</table>
+
+<br>
+
+        <footer class="page-footer blue-grey darken-3">
+            <div class="container">
+              <div class="row">
+                <div class="col l12 m12 s12">
+                  <h6 tabindex="0" class="center-align"> Club de Lectura ULL </h6>
+                  <h6 tabindex="0" class="center-align"> Calle Padre Herrera, s/n, 38200 San Cristóbal de La Laguna </h6>
+                  <hr>
+                  <h6 tabindex="0" class="center-align"> Usabilidad y Accesibilidad </h6>
+                  <h6 tabindex="0" class="center-align"> Curso 2018/2019 </h6>
+                </div>
+              </div>
+            </div>
+            <div class="footer-copyright">
+              <div class="container">
+                  © 2018/2019 ULL Copyright 
+                  <a class="grey-text text-lighten-4 right hide-on-med-and-down" href="">Facebook</a>
+                  </div>
+                </div>
+          </footer>
+      
+
+            <script src="js/app.js"></script>
+            <script type="text/javascript" src="js/materialize.min.js"></script>
+          </body>
+        </html>

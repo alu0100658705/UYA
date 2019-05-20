@@ -1,0 +1,89 @@
+input[type=text], select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+.req {
+    font-size: 120%
+}  
+
+.novedades {
+  height: 900px;
+  width: 100%;
+}
+
+
+ .accesible {
+  text-align: center;
+}
+  .iconos {
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+  }
+
+
+input {
+  width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+  
+.form label {
+    float: left;
+    margin-right: 0.5em;
+    font-size: 20px;
+} 
+  
+  input[type=number], select {
+    width: 25%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=submit] {
+    width: 250px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  .button {
+    color: #fff;
+    background-color: #5D1972;
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    border-width: 2px;
+    padding: 20px;
+    font-size: 20px;
+    line-height: 0.5px;
+    border-radius: 0.25rem;
+    border-color: #5D1972;
+  }
+
+  .button:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
