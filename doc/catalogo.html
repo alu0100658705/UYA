@@ -2,7 +2,8 @@
   <html>
     <head>
       <meta charset="UTF-8">
-      <title>Club de Lectura</title>
+      <title>Catálogo</title>
+      <link rel="stylesheet" href="css/estilos.css">
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
@@ -19,46 +20,62 @@
     <body class="indigo lighten-5">
       <nav class="nav-extended purple darken-3">
         <div class="container">
-          <div class="nav-wrapper">
-            <a href="index.html" class="brand-logo"><h4>Club De Lectura ULL</h4></a>
-              <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="Registro.html">Registro</a></li>
-                <li><a href="">Iniciar Sesión</a></li>
-              </ul>
-          </div>
-          <div role ="barra menú" aria-label ="menú principal" class="nav-content">
-          <div class="tabs tabs-transparent">
-          <ul>
-            <li><a href="index.html"><h5>Portada</h5></a></li>
-            <li><a href="Formulario.html"><h5>Formulario</h5></a></li>
-            <li><a href="catalogo.html"><h5>Catálogo</h5></a></li>
-            <li><a href="biblioteca.html"><h5>Biblioteca</h5></a></li>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo hide-on-small-only"><h4>Club De Lectura ULL</h4></a>
+          <a href="#" class="brand-logo hide-on-med-and-up show-on-small"><h6>Club De Lectura ULL</h6></a>
+          <a href="#" data-target="menu-responsive" class="sidenav-trigger">
+            <i class="material-icons">menu</i>
+          </a>
+            <ul aria-live="polite" id="nav-mobile" class="right hide-on-med-and-down">
+                <li id="superior_ob1"></li>
+                <li id="superior_ob2"></li>
+            </ul>
+        </div>
+
+       <div role ="barra menú" aria-label ="menú principal" class="nav-content hide-on-med-and-down">
+          <ul class="tabs tabs-transparent hide-on-med-and-down">
+            
+            <li><a href="index.html" class="button"><h5>Portada</h5></a></li>
+            <li class="active green darken-1"><a href="catalogo.html" class="button"><h5>Catálogo</h5></a></li>
+            <li><a href="ayuda.html" class="button"><h5>Ayuda</h5></a></li>
+            <li><a href="info.html" class="button"><h5>Información</h5></a></li>
           </ul>
-          </div>
-          </div>
+        </div>
         </div>
       </nav>
+      
+      <ul class="sidenav indigo lighten-5" id="menu-responsive">
+        <li><a href="index.html"><h5>Portada</h5></a></li>
+        <li><a href="catalogo.html"><h5>Catálogo</h5></a></li>
+        <li><a href="foro.html"><h5>Biblioteca</h5></a></li>
+        <li><a href="Registro.html">Registro</a></li>
+        <li><a href="Sesion.html">Iniciar Sesión</a></li>
+      </ul>
 
-        <table id="tabla_libros" class="table">
-					<thead>
-							<tr>
-								<th scope="col">Autor</th>
-								<th scope="col">Fecha</th>
-								<th scope="col">Género</th>
-								<th scope="col">Título</th>
+      <div class="tablas_catalogos">
 
-							</tr>
-					</thead>
-			</section>
+          <div aria-live="polite" id="info_catalogo"></div>
+          <div aria-live="polite" id="boton_id"></div>
 
-<tbody id="etiqueta">
-</tr>
-</tbody>
-</table>
-
-<br>
-
-        <footer class="page-footer blue-grey darken-3">
+          <h3>Catálogo: </h3>
+          <br>
+            <table aria-live="polite" id="tabla_libros" class="table">
+					  <thead>
+							  <tr>
+                  <th scope="col">Autor</th>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Género</th>
+                  <th scope="col">Título</th>
+							  </tr>
+					  </thead>
+            <tbody id="etiqueta"></tr></tbody>
+            </table>
+            <br>
+            
+      </div>
+      <br>
+        
+      <footer role="contentinfo" class="page-footer blue-grey darken-3">
             <div class="container">
               <div class="row">
                 <div class="col l12 m12 s12">
@@ -73,12 +90,12 @@
             <div class="footer-copyright">
               <div class="container">
                   © 2018/2019 ULL Copyright 
-                  <a class="grey-text text-lighten-4 right hide-on-med-and-down" href="">Facebook</a>
+                  <a class="grey-text text-lighten-4 right hide-on-med-and-down" href="https://github.com/alu0100658705/UYA/tree/master/doc">GitHub <img src="images/github.png" class="circle responsive-img" width="30" height="50"></a>
                   </div>
                 </div>
           </footer>
       
-
+            <script src="js/firebase.js"></script>
             <script src="js/app.js"></script>
             <script type="text/javascript" src="js/materialize.min.js"></script>
           </body>

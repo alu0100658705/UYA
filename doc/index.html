@@ -7,14 +7,24 @@
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-      <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen"/>
+      <link href="css/style.css" type="text/css" rel="stylesheet" media="screen"/>
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+      
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131534067-2"></script>
+      <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-131534067-2');
+      </script>
     </head>
 
     <body class="indigo lighten-5">
@@ -26,18 +36,18 @@
             <a href="#" data-target="menu-responsive" class="sidenav-trigger">
               <i class="material-icons">menu</i>
             </a>
-              <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="Registro.html">Registro</a></li>
-                <li><a href="">Iniciar Sesión</a></li>
+              <ul aria-live="polite" id="nav-mobile" class="right hide-on-med-and-down">
+                  <li id="superior_ob1"></li>
+                  <li id="superior_ob2"></li>
               </ul>
           </div>
-         <div role = "barra menú" aria-label = "menú principal" class="nav-content hide-on-med-and-down">
+         <div aria-label ="menú principal" class="nav-content hide-on-med-and-down">
             <ul class="tabs tabs-transparent hide-on-med-and-down">
               
-              <li><a href="index.html"><h5>Portada</h5></a></li>
-              <li><a href="Formulario.html"><h5>Formulario</h5></a></li>
-              <li><a href="catalogo.html"><h5>Catálogo</h5></a></li>
-              <li><a href="biblioteca.html"><h5>Biblioteca</h5></a></li>
+              <li class="active green darken-1"><a href="index.html" class="button"><h5>Portada</h5></a></li>
+              <li><a href="catalogo.html" class="button"><h5>Catálogo</h5></a></li>
+              <li><a href="ayuda.html" class="button"><h5>Ayuda</h5></a></li>
+              <li><a href="info.html" class="button"><h5>Información</h5></a></li>
             </ul>
           </div>
           </div>
@@ -45,31 +55,31 @@
         
         <ul class="sidenav indigo lighten-5" id="menu-responsive">
           <li><a href="index.html"><h5>Portada</h5></a></li>
-          <li><a href="Formulario.html"><h5>Formulario</h5></a></li>
-          <li><a href="catalogo.html"><h5>Catálogo</h5></a></li>
-          <li><a href="biblioteca.html"><h5>Biblioteca</h5></a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="ayuda.html">Ayuda</a></li>
+          <li><a href="info.html">Información</a></li>
           <li><a href="Registro.html">Registro</a></li>
-          <li><a href="">Iniciar Sesión</a></li>
+          <li><a href="Sesion.html">Iniciar Sesión</a></li>
         </ul>
       
       <div tabindex="0" class="slider">
       <ul class="slides">
         <li>
-          <img src="images/libro.jpg"> 
+          <img class="img-responsive" src="images/libro.jpg" alt="libros"> 
           <div class="caption center-align">
             <h3 tabindex="0">Todas las novedades literarias</h3>
           </div>
         </li>
         <li>
-          <img src="images/charla.jpg"> 
+          <img class="img-responsive" src="images/charla.jpg" alt="charlas"> 
           <div class="caption left-align">
             <h3 tabindex="0" class="purple-text text-darken-2">Charlas y presentaciones todas las semanas</h3>
           </div>
         </li>
         <li>
-          <img src="images/biblioteca.jpg"> 
+          <img class="img-responsive" src="images/biblioteca.jpg" alt="bibliotecas"> 
           <div class="caption right-align">
-            <h3 tabindex="0">Acceso al Catálo</h3>
+            <h3 tabindex="0">Acceso al Catálogo</h3>
             <h5 class="light grey-text text-lighten-3">Libros, Revistas...</h5>
           </div>
         </li>
@@ -78,25 +88,17 @@
 
       <div class="row">
         <div tabindex="0" class="col s12 m6 l3 brown lighten-4">
-          <div class="novedades">
-            <p><h5>Libros más leidos del mes:</h5></p>
+          <div class="novedades center-align">
+            <h5>Libros más leidos del mes:</h5>
               <ol>
-                <h6><li tabindex="0" value="1"> Yo, Julia. Santiago Posteguillo Gómez </li></h6>
-                <div class="center-align">
-                <img src="images/yo-julia.jpg" class="circle responsive-img" width="90" height="110">
-                </div>
-                <br><h6><li tabindex="0"> Serotonina. Michel Houellebecq </li></h6>
-                <div class="center-align">
-                <img src="images/sero.jpg" class="circle responsive-img" width="90" height="110">
-                </div>
-                <br><h6><li tabindex="0"> Reina roja. Juan Gómez-Jurado </li></h6>
-                <div class="center-align">
-                <img src="images/reina.jpg" class="circle responsive-img" width="90" height="110">
-                </div>
-                <br><h6><li tabindex="0"> Los asquerosos. Santiago Lorenzo </li></h6>
-                <div class="center-align">
-                <img src="images/asque.jpg" class="circle responsive-img" width="90" height="110">
-                </div>
+                <li tabindex="0" value="1"><h6>Yo, Julia. Santiago Posteguillo Gómez</h6></li>
+                <img src="images/yo-julia.jpg" class="circle responsive-img" alt="libro1" width="90" height="110">
+                <br><li tabindex="0"><h6> Serotonina. Michel Houellebecq</h6></li>
+                <img src="images/sero.jpg" class="circle responsive-img" alt="libro2" width="90" height="110">
+                <br><li tabindex="0"><h6>Reina roja. Juan Gómez-Jurado</h6></li>
+                <img src="images/reina.jpg" class="circle responsive-img" alt="libro3" width="90" height="110">
+                <br><li tabindex="0"><h6>Los asquerosos. Santiago Lorenzo</h6></li>
+                <img src="images/asque.jpg" class="circle responsive-img" alt="libro4" width="90" height="110">
               </ol>
           </div>
         </div>
@@ -157,20 +159,28 @@
 
         <div class="utilidades col s12 m12 l3">
             <div class="accesible">
-              <div class="iconos">
+                <h4>Libro del Mes: </h4>
+                <img src="images/sakura.jpg" class="squeare responsive-img" width="140" height="160">
+                <h6 class="blue-text text-darken-3">Título: Sakura</h6>
+                <h6 class="blue-text text-darken-3">Autor: Matilde Asensi </h6>
+                <h4>Autor del Mes: </h4>
+                <img src="images/marias.jpg" class="squeare responsive-img" width="140" height="160">
+                <h6 class="blue-text text-darken-3">Javier Marías</h6>
+                <br>
+                <hr class="black">
+                <div class="iconos">
                   <i class="large material-icons">accessible</i>
                   <i class="large material-icons">accessibility</i>
                   <h5>Página Accesible</h5>
-              </div>
-            </div>
-        
-                <h5>Información de la Página:</h5>
-              <pre id="info"></pre>
+                </div>
+            </div>                
+              <br>
+
         </div>
 
       </div>
     
-    <footer class="page-footer blue-grey darken-3">
+    <footer role="contentinfo" class="page-footer blue-grey darken-3">
       <div class="container">
         <div class="row">
           <div class="col l12 m12 s12">
@@ -185,23 +195,14 @@
       <div class="footer-copyright">
         <div class="container">
             © 2018/2019 ULL Copyright 
-            <a class="grey-text text-lighten-4 right hide-on-med-and-down" href="">Facebook</a>
+            <a class="grey-text text-lighten-4 right hide-on-med-and-down" href="https://github.com/alu0100658705/UYA/tree/master/doc">GitHub <img src="images/github.png" class="circle responsive-img" width="30" height="50"></a>
             </div>
           </div>
     </footer>
-
-
-       <!--Dónde único funciona:--> 
-      <script type="text/javascript">
-      $(document).ready(function(){
-      $('.slider').slider({full_width: true});
-      });
-      </script>
-       <script> 
-          document.addEventListener('DOMContentLoaded', function(){
-              M.AutoInit();
-          });        
-          </script>
+     
+      <script src="js/slider.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+      <script src="js/firebase.js"></script>
       <script src="js/script.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
     </body>

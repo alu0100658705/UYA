@@ -1,9 +1,9 @@
-<!doctype html>
-<html>
-
-	<head>
+<!DOCTYPE html>
+  <html>
+    <head>
       <meta charset="UTF-8">
-	    <title>Formulario</title>
+      <title>Catálogo</title>
+      <link rel="stylesheet" href="css/estilos.css">
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
@@ -11,55 +11,71 @@
       <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    
+
+      <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-		  
-	</head>
+    </head>
 
-  <body class="indigo lighten-5">
-    <nav class="nav-extended purple darken-3">
-      <div class="container">
+    <body class="indigo lighten-5">
+      <nav class="nav-extended purple darken-3">
+        <div class="container">
         <div class="nav-wrapper">
-          <a href="index.html" class="brand-logo"><h4>Club De Lectura ULL</h4></a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="Registro.html">Registro</a></li>
-              <li><a href="">Iniciar Sesión</a></li>
+          <a href="#" class="brand-logo hide-on-small-only"><h4>Club De Lectura ULL</h4></a>
+          <a href="#" class="brand-logo hide-on-med-and-up show-on-small"><h6>Club De Lectura ULL</h6></a>
+          <a href="#" data-target="menu-responsive" class="sidenav-trigger">
+            <i class="material-icons">menu</i>
+          </a>
+            <ul aria-live="polite" id="nav-mobile" class="right hide-on-med-and-down">
+                <li id="superior_ob1"></li>
+                <li id="superior_ob2"></li>
             </ul>
         </div>
-        <div role ="barra menú" aria-label ="menú principal" class="nav-content">
-        <div class="tabs tabs-transparent">
-        <ul>
-          <li><a href="index.html"><h5>Portada</h5></a></li>
-          <li><a href="Formulario.html"><h5>Formulario</h5></a></li>
-          <li><a href="catalogo.html"><h5>Catálogo</h5></a></li>
-          <li><a href="biblioteca.html"><h5>Biblioteca</h5></a></li>
-        </ul>
+
+       <div role ="barra menú" aria-label ="menú principal" class="nav-content hide-on-med-and-down">
+          <ul class="tabs tabs-transparent hide-on-med-and-down">
+              <li><a href="index.html" class="button"><h5>Portada</h5></a></li>
+              <li><a href="catalogo.html" class="button"><h5>Catálogo</h5></a></li>
+              <li><a href="ayuda.html" class="button"><h5>Ayuda</h5></a></li>
+              <li><a href="info.html" class="button"><h5>Información</h5></a></li>
+              <li class="active green darken-1"><a href="Formulario.html" class="button"><h5>Formulario</h5></a></li>
+           
+          </ul>
         </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+      
+      <ul class="sidenav indigo lighten-5" id="menu-responsive">
+        <li><a href="index.html"><h5>Portada</h5></a></li>
+        <li><a href="catalogo.html"><h5>Catálogo</h5></a></li>
+        <li><a href="Registro.html">Registro</a></li>
+        <li><a href="Sesion.html">Iniciar Sesión</a></li>
+      </ul>
 
        <div role="form" aria-labelledby="addlibro"> 
             <legend id="addlibro"> <h4 class="purple-text text-darken-2"> Añadir un Libro: </h4> </legend> 
               <form id="formulario" class="formulario" onsubmit="return validate()">
                 <div class="libro">
                   <label for="titulo"> <h6>Título:  <abbr class="req" title="required">* </abbr> </h6></label>
-                  <input type="text" required id="titulo" name="titulo"/>
-                  <label for="autor"> <h6>Autor: <abbr class="req" title="required">*</abbr> </h6> </label>
-                  <input type="text" required id="autor" name="autor"/>
-                  <label for="fecha"> <h6>Fecha: <abbr class="req" title="required">*</abbr> </h6></label>
-                  <input type="number" required id="fecha" name="fecha"/>
+                  <input type="text" required id="titulo" name="titulo" onfocus="toggleFocus(this)" onblur="toggleFocus(this)"/>
+                  <label for="autor"> <h6>Autor: <abbr class="req" title="required" autocomplete="name">*</abbr> </h6> </label>
+                  <input type="text" required id="autor" name="autor" onfocus="toggleFocus(this)" onblur="toggleFocus(this)"/>
+                  <label for="fecha"> <h6>Año: <abbr class="req" title="required" autocomplete="bday-year">*</abbr> </h6></label>
+                  <input type="number" required id="fecha" name="fecha" onfocus="toggleFocus(this)" onblur="toggleFocus(this)"/>
                   <label for="genero"> <h6>Género: <abbr class="req" title="required">*</abbr> </h6></label>
-                  <input type="text" required id="genero" name="genero"/>
+                  <input type="text" required id="genero" name="genero" onfocus="toggleFocus(this)" onblur="toggleFocus(this)"/>
                 </div>
             
                 <br>
+                <div id="resultado" role="status"></div>
+                <br>
     
-                <p> Enviar a la base de datos: </br>
-                  <button tabindex="0" aria-pressed="false" class="btn waves-effect purple darken-3" type="submit" name="action">Submit
+                <p><h5> Enviar a la base de datos: </h5></br>
+                  <button tabindex="0" aria-pressed="false" class="btn btn-large waves-effect purple darken-3" type="submit" name="action">Enviar
                       <i class="material-icons right">send</i>
                     </button>
+
+                    <div id="resultado" role="status"></div>
                   <!---<input type="submit" value="Enviar" name="Enviar" class="button"/>--> 
                 </p>
                 <!--
@@ -76,7 +92,7 @@
         <p> (<abbr class="req" title="required">*</abbr>) Campos requeridos.</p>
 
         
-        <footer class="page-footer blue-grey darken-3">
+        <footer role="contentinfo" class="page-footer blue-grey darken-3">
             <div class="container">
               <div class="row">
                 <div class="col l12 m12 s12">
@@ -91,29 +107,25 @@
             <div class="footer-copyright">
               <div class="container">
                   © 2018/2019 ULL Copyright 
-                  <a class="grey-text text-lighten-4 right hide-on-med-and-down" href="">Facebook</a>
+                  <a class="grey-text text-lighten-4 right hide-on-med-and-down" href="https://github.com/alu0100658705/UYA/tree/master/doc">GitHub <img src="images/github.png" class="circle responsive-img" width="30" height="50"></a>
                   </div>
                 </div>
           </footer>
 
-
-
+          <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+          <script src="js/firebase.js"></script>
     </body>
 
-    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+
+<script>
+  function toggleFocus(el)
+  {
+    el.style.backgroundColor =  el.style.backgroundColor=="lightgreen" ? "inherit" : "lightgreen";
+  }
+</script>
+    
 <script>
   
-  // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyBRwkE7Lj0K_nU11r2wfa9Hy3jfikBUnxQ",
-        authDomain: "uya-g2.firebaseapp.com",
-        databaseURL: "https://uya-g2.firebaseio.com",
-        projectId: "uya-g2",
-        storageBucket: "uya-g2.appspot.com",
-        messagingSenderId: "98345995388"
-    };
-    firebase.initializeApp(config);
-
     var form = document.getElementById('formulario'); 
     var ok = true;
 
@@ -140,11 +152,9 @@
     }
 
   function saveformulario(data) {
-
-
     firebase.database().ref("libros").push(data)
     .then(function(){
-        alert('Enviado con éxito'); 
+      document.getElementById('resultado').innerHTML = '<h4>Enviado con éxito</h4>';
       }) 
   };
 
@@ -155,27 +165,27 @@
 	var aut = document.getElementById("autor");
 	if (!pattern.test(aut.value)){ 
     msg += "El campo 'autor' solo puede contener letras y espacios. ";
-    ok = false;
+    //ok = false;
   }
 
   var pattern = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/;
 	var gen = document.getElementById("genero");
 	if (!pattern.test(gen.value)){ 
      msg += "El campo 'género' solo puede contener letras y espacios. ";
-     ok = false;
+     //ok = false;
   }
 
 	var pattern = /^[0-9]{4}$/;
 	var fech = document.getElementById("fecha");
 	if (!pattern.test(fech.value)){  
     msg += "La fecha no es correcta. Debe tener cuatro dígitos. ";
-		ok = false;
+		//ok = false;
   }
  
 	if (msg != "") {
 		alert(msg);
-		return false;
-	} else return true;
+		ok = false;
+	} else ok = true;
 }
 </script>
 <script type="text/javascript" src="js/materialize.min.js"></script>

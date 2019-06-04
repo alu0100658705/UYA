@@ -46,49 +46,51 @@
           <li><a href="index.html"><h5>Portada</h5></a></li>
           <li><a href="catalogo.html"><h5>Catálogo</h5></a></li>
           <li><a href="foro.html"><h5>Biblioteca</h5></a></li>
-          <li class="active"><a href="Registro.html">Registro</a></li>
-          <li><a href="Sesion.html">Iniciar Sesión</a></li>
+          <li><a href="Registro.html">Registro</a></li>
+          <li class="active"><a href="Sesion.html">Iniciar Sesión</a></li>
         </ul>
-        
 
-        <div class=container>
-        <form role="form" id="formulario" class="formulario">
-            <label for="correo"> Correo Electrónico: <abbr class="req" title="required" autocomplete="email">*</abbr> </label>
-            <input id="correo" type="email" placeholder="Email" >
-            <label for="pass"> Contraseña: <abbr class="req" title="required">*</abbr></label>
-            <input id="txtpass" type="password" placeholder="Password" >
-        </form>
+        <div class="container">
+            <form role="form" id="formulario" class="formulario">
+                <label for="correo"> Correo Electrónico: <abbr class="req" title="required" autocomplete="email">*</abbr> </label>
+                <input id="correo" type="email" placeholder="Email">
+                <label for="pass"> Contraseña: <abbr class="req" title="required" autocomplete="current-password">*</abbr></label>
+                <input id="txtpass" type="password" placeholder="Password">
+            </form>
 
-            <a href="javascript:void(0);" onclick="registro();" class="btn-registro">
-                Registrarse
-            </a>
+                <a href="javascript:void(0);" onclick="iniciar();" class="btn-registro">
+                    Iniciar Sesión
+                </a>
+    
+                <p> <div id="mensaje"></div>  </p>
+                
+    
+            </div>
 
-            <p> <div id="mensaje_r"></div>  </p>
+    
+      <footer role="contentinfo" class="page-footer blue-grey darken-3">
+      <div class="container">
+        <div class="row">
+          <div class="col l12 m12 s12">
+            <h6 tabindex="0" class="center-align"> Club de Lectura ULL </h6>
+            <h6 tabindex="0" class="center-align"> Calle Padre Herrera, s/n, 38200 San Cristóbal de La Laguna </h6>
+            <hr>
+            <h6 tabindex="0" class="center-align"> Usabilidad y Accesibilidad </h6>
+            <h6 tabindex="0" class="center-align"> Curso 2018/2019 </h6>
+          </div>
         </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+            © 2018/2019 ULL Copyright 
+            <a class="grey-text text-lighten-4 right hide-on-med-and-down" href="">Facebook</a>
+            </div>
+          </div>
+    </footer>
 
-        <footer class="page-footer blue-grey darken-3">
-                <div class="container">
-                  <div class="row">
-                    <div class="col l12 m12 s12">
-                      <h6 tabindex="0" class="center-align"> Club de Lectura ULL </h6>
-                      <h6 tabindex="0" class="center-align"> Calle Padre Herrera, s/n, 38200 San Cristóbal de La Laguna </h6>
-                      <hr>
-                      <h6 tabindex="0" class="center-align"> Usabilidad y Accesibilidad </h6>
-                      <h6 tabindex="0" class="center-align"> Curso 2018/2019 </h6>
-                    </div>
-                  </div>
-                </div>
-                <div class="footer-copyright">
-                  <div class="container">
-                      © 2018/2019 ULL Copyright 
-                      <a class="grey-text text-lighten-4 right hide-on-med-and-down" href="">Facebook</a>
-                      </div>
-                    </div>
-              </footer>
-
-        <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
-        <script src="js/firebase.js"></script>
-        <script src="js/script.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+    <script src="js/firebase.js"></script>
+    <script src="js/script.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
     </body>
-</html>
+  </html>
